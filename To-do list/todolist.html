@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do app</title>
+    <link rel="stylesheet" type="text/css" href="todolistcss.css">
+ <script>
+    var index=0;
+    var arr=[];
+    var arr1=[];
+    var taskc=[];
+    var des=[];
+    function add()
+{
+let x=document.getElementById("tbody");
+let y=document.getElementById("task").value;
+let z=document.getElementById("description").value;
+ arr.push(y);
+ arr1.push(z);
+
+str="";
+index=arr.length;
+let i;
+for(i=0;i<index;i++)
+{
+
+str=str+'<tr><th id=h1>'+String(Number(i+1))+'</th>';
+    str=str+'<th id=h1>'+arr[i]+'</th>';
+    str=str+'<th id=h1>'+arr1[i] +'</th>';
+    str=str+"<th id=h1><input type='button' value='Delete' id='button' onclick='deleteItem("+Number(i)+")'></th>"
+    str=str+"<th id=h1><input type='button' value='Edit' id='button' onclick='editItem("+Number(i)+")'></th>"
+    str=str+"<th id='h1'><input type='checkbox' id='checkBox"+String(i)+"' onclick='completed("+Number(i)+")'></th>"
+
+    str=str+'</tr>';
+    
+}
+x.innerHTML=str;
+pending();
+}
+function deleteItem(k)
+{
+ console.log(arr[k]);
+ console.log(arr1[k]);
+ arr.splice(k,1);
+ arr1.splice(k,1);
+ let x=document.getElementById("tbody");
+ x.innerHTML=null;
+ str="";
+index=arr.length;
+let i;
+for(i=0;i<index;i++)
+{
+
+str=str+'<tr><th id=h1>'+String(Number(i+1))+'</th>';
+    str=str+'<th id=h1>'+arr[i]+'</th>';
+    str=str+'<th id=h1>'+arr1[i] +'</th>';
+    str=str+"<th id=h1><input type='button' value='Delete' id='button' onclick='deleteItem("+Number(i)+")'></th>"
+    str=str+"<th id=h1><input type='button' value='Edit' id='button' onclick='editItem("+Number(i)+")'></th>"
+    str=str+"<th id='h1'><input type='checkbox' id='checkBox"+String(i)+"' onclick='completed("+Number(i)+")'></th>"
+
+
+    str=str+'</tr>';
+    
+}
+x.innerHTML=str;  
+pending()
+
+    
+}
+function completed(k)
+{
+ 
+ let z=document.getElementById("checkBox"+String(k));
+if(z.checked)
+{
+ 
+ 
+   
+ let x=arr[k];
+ taskc.push(x);
+ 
+ let y=arr1[k];
+ des.push(y);
+ 
+ let i=0;
+ let index=taskc.length;
+ str="";
+ for(i=0;i<index;i++)
+ {
+str=str+"<tr><th id='h1'>"+Number(i+1)+"</th>"
+    str=str+"<th id='h1'>"+taskc[i]+"</th>"
+    str=str+"<th id='h1'>"+des[i]+"</th></tr>"
+ } 
+ x=document.getElementById("tbody1");
+ x.innerHTML=str;
+ pending()
+
+}
+else
+ {
+    taskc.splice(k,1);
+    des.splice(k,1);
+    let i=0;
+ let index=taskc.length;
+ str="";
+ for(i=0;i<index;i++)
+ {
+str=str+"<tr><th id='h1'>"+Number(i+1)+"</th>"
+    str=str+"<th id='h1'>"+taskc[i]+"</th>"
+    str=str+"<th id='h1'>"+des[i]+"</th></tr>"
+ } 
+ x=document.getElementById("tbody1");
+ x.innerHTML=str;
+ pending()
+ }
+
+
+}
+
+function pending()
+{
+let i,j,flag;
+let str="";
+let index=arr.length;
+let index1=taskc.length;
+for(i=0;i<index;i++)
+{
+    let strtask=arr[i].toString();
+    let strdes=arr1[i].toString();
+    flag=0;
+    for(j=0;j<index1;j++)
+    {
+      let str1=taskc[j].toString();
+      let str2=des[j].toString();
+      let x=str1.search(strtask);
+      let y=str2.search(strdes)  
+
+        if(x>=0&&y>=0)
+        {
+            flag=1;
+            break;
+        }
+    }
+    if(flag==0)
+    {
+        str=str+"<tr><th id='h1'>"+Number(i+1)+"</th>"
+    str=str+"<th id='h1'>"+arr[i]+"</th>"
+    str=str+"<th id='h1'>"+arr1[i]+"</th></tr>"
+    
+    }
+}
+let x=document.getElementById("tbody2");
+x.innerHTML=str;
+}
+function editItem(k)
+{
+let x=document.getElementById("task");
+let y=document.getElementById("description");
+x.value=arr[k];
+y.value=arr1[k];
+deleteItem(k);
+
+
+}
+ </script>
+</head>
+<body>
+<div class="container">
+
+    <div class="d1">
+        <form>
+            <label for="task">Task</label>
+            <input type="text" name="Task" id="task" placeholder="Enter your task here">
+        </form>
+    </div>
+    <div class="d2">
+        <form>
+            <label for="description">Description</label>
+            <input type="text" name="desc" id="description" placeholder="Enter your task description here">
+        </form>
+    </div>
+    <div class="d3">
+        <form>
+            <label for="button">Click button to add task to to-do list</label>
+            <input type="button" name="desc" id="button" value="Add" onclick="add()">
+        </form>
+    </div>
+    <div id="d4">
+        <h2><i>Your items</i></h2>
+    </div>
+    <div class="d5">
+        <table class="table">
+            <thead id="head">
+                <tr>
+                    <th id="h1">Serial No</th>
+                    <th id="h1">Task</th>
+                    <th id="h1">Description</th>
+                    <th id="h1">Action</th>
+                    <th id="h1">Action</th>
+                    <th id="h1">Status</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
+    <div id="d4">
+        <h2><i>Completed</i></h2>
+    </div>
+    
+    <div class="d6">
+        <table class="table">
+            <thead id="head">
+                <tr>
+                    <th id="h1">Serial No</th>
+                    <th id="h1">Task</th>
+                    <th id="h1">Description</th>
+                   
+                    
+                </tr>
+            </thead>
+            <tbody id="tbody1"></tbody>
+        </table>
+    </div>
+    <div id="d7">
+        <h2><i>Pending</i></h2>
+    </div>
+     <div class="d7">
+        <table class="table">
+            <thead id="head">
+                <tr>
+                    <th id="h1">Serial No</th>
+                    <th id="h1">Task</th>
+                    <th id="h1">Description</th>
+                   
+                    
+                </tr>
+            </thead>
+            <tbody id="tbody2"></tbody>
+        </table>
+    </div>
+
+    
+</body>
+
+</html>

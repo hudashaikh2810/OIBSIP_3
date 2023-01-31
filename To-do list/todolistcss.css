@@ -1,0 +1,171 @@
+.container
+{
+    height:100vh;
+    width:100%;
+    box-sizing: border-box;
+    color:black;
+background-image:url("https://thumbs.dreamstime.com/z/to-do-list-white-paper-pencils-background-template-56711188.jpg");
+text-align: center;
+}
+.d1
+{
+    height: 50px;
+    width:inherit;
+  
+    position:relative;
+    top:200px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:x-large;
+    font-weight: bolder;
+    
+    
+}
+#task
+{
+    width:30%;
+    height: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    position:relative:
+    
+
+}
+#description
+{
+    width:30%;
+    height: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    position:relative:
+    
+
+}
+.d2
+{
+    height: 50px;
+    width:inherit;
+    
+    position:relative;
+    top:220px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:x-large;
+    font-weight: bolder; 
+    
+}
+.d3
+{
+    height: 50px;
+    width:inherit;
+   
+    position:relative;
+    top:240px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:x-large;
+    font-weight: bolder;
+}
+#button
+{
+    height:40px;
+   background-color: red;
+    color:white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:medium;
+    width:60px;
+    position: inherit;
+    
+
+}
+
+#d4
+{
+    height: 50px;
+    width:inherit;
+  
+    position:relative;
+    top:260px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:x-large;
+    font-weight: bolder;
+    text-align: left;
+    color:brown
+    
+    
+}
+.d5
+{
+    height: 500px;
+    width:inherit;
+  
+    position:relative;
+    top:280px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:x-large;
+    font-weight: bolder;
+
+    
+    
+}
+.table
+{
+    border: 2px solid black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-spacing: 6px;
+    border-collapse: collapse;
+    width:50%;
+    margin: auto;
+    
+}
+#head
+{
+    color:white;
+    background-color: red;
+    border:2px solid black
+    
+}
+#h1
+{
+    border:2px solid black;
+}
+.d6
+{
+    height: 500px;
+    width:inherit;
+  
+    position:relative;
+    top:280px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:x-large;
+    font-weight: bolder;
+
+    
+    
+}
+
+.d7
+{
+    height: 500px;
+    width:inherit;
+  
+    position:relative;
+    top:280px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:x-large;
+    font-weight: bolder;
+
+    
+    
+}
+#d7
+{
+    height: 50px;
+    width:inherit;
+  
+    position:relative;
+    top:260px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:x-large;
+    font-weight: bolder;
+    text-align: left;
+    color:brown
+
+}
